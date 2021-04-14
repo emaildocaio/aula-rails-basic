@@ -1,0 +1,24 @@
+<h1>Welcome to our website</h1>
+
+
+<h2>now is <%= @time %></h2>
+<h3>My first student is <%= @students.first %> </h3>
+
+<form action="/"> <!-- Pra onde eu vou levar minha informação do form-->
+  <input type="text" name="student_name" value="<%= params[:student_name] %>" placeholder="Digite seu texto"><br> <!-- Preciso dar um nome ao input-->
+  <input type="number" name="student_length" value="<%= params[:student_length]%>" placeholder="Quantas letras?">
+  <input type="submit">
+</form>
+
+<h3>List of student</h3>
+<ul>
+  <% @students.each do |student| %>
+    <li> <%= student %> </li>
+  <% end %>
+</ul>
+
+
+
+
+<%= link_to 'Contact Us', contact_path %>
+<%= link_to 'About', about_path %>
